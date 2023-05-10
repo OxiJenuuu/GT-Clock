@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Clock</title>
+  <style>
+        body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        }
+
+        #clock {
+        font-size: 48px;
+        }
+    </style>
+</head>
+<body>
+    <h1 id="clock"></h1>
+
+  <script>
+    function showClock() {
+      var clockElement = document.getElementById("clock");
+      var currDate = new Date();
+      var h = currDate.getHours();
+      var m = currDate.getMinutes();
+      var s = currDate.getSeconds();
+
+      var formatH = h < 10 ? "0" + h : h;
+      var formatM = m < 10 ? "0" + m : m;
+      var formatS = s < 10 ? "0" + s : s;
+
+      var time = formatH + ":" + formatM + ":" + formatS;
+      clockElement.textContent = time;
+    }
+
+    setInterval(showClock, 1000);
+    showClock();
+  </script>
+</body>
+</html>
